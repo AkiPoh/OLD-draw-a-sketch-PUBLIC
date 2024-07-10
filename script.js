@@ -3,8 +3,10 @@ const inputGridSize = document.querySelector("#gridSize")
 const enterButton = document.querySelector("#enterButton");
 const gridContainerDiv = document.querySelector("#gridContainer");
 let inputErrorGiven = false;
+const START_SIZE = 32;
+let previousSize = START_SIZE;
 
-function createGrid (gridSize = 32) {
+function createGrid (gridSize = START_SIZE) {
     for (let rowNumber = 0; rowNumber < gridSize; rowNumber++) {
         const gridRow = document.createElement("div");
         gridRow.classList.add("gridRow");
@@ -26,18 +28,26 @@ function resetGrid () {
 }
 
 createGrid();
-inputGridSize.value = "16";
+inputGridSize.value = START_SIZE;
 
 enterButton.addEventListener("click", function() {
     size = inputGridSize.value;
     if (size % 1 === 0 && size >= 4 && size <= 32) {
         resetGrid();
         createGrid(size);
+        previousSize = size;
+        if (inputErrorGiven === true) {
+            document.querySelector("#errorDiv").remove();
+            inputErrorGiven = false;
+        }
     } else if (inputErrorGiven === false) {
-        inputGridSize.value = "";
+        inputGridSize.value = previousSize;
         const errorDiv = document.createElement("div");
         errorDiv.textContent = "ENTER VALID INPUT!";
+        errorDiv.setAttribute("id", "errorDiv")
         adjustSettingsDiv.appendChild(errorDiv);
         inputErrorGiven = true;
+    } else {
+        inputGridSize.value = previousSize;
     }
 });
