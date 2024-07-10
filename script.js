@@ -20,7 +20,7 @@ function createGrid (gridSize = START_SIZE) {
                 e.preventDefault(); //prevent scrolling
                 const touchPoint = e.touches[0]; //selects first touch point
                 const elementThatTouched = document.elementFromPoint(touchPoint.clientX, touchPoint.clientY); //selects specfic element that was touched
-                if (element && element.classList.contains("gridElement")) {
+                if (elementThatTouched && elementThatTouched.classList.contains("gridElement")) {
                     elementThatTouched.classList.add("colored");
                 }            
             });
