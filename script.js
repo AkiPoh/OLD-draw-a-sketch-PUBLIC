@@ -29,9 +29,9 @@ createGrid();
 inputGridSize.value = "16";
 
 enterButton.addEventListener("click", function() {
-    resetGrid();
     size = inputGridSize.value;
     if (size % 1 === 0 && size >= 4 && size <= 32) {
+        resetGrid();
         createGrid(size);
     } else if (inputErrorGiven === false) {
         inputGridSize.value = "";
