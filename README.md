@@ -2,4 +2,4 @@
 
 ## Development
 ### Dev stage 1
-Create a grid of specified dimensions from divs with javascript.
+Completed: 10.7.2024

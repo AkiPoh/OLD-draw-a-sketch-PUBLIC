@@ -8,7 +8,7 @@
     flex-direction: column;
 }
 
-.gridColumn {
+.gridRow {
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -16,17 +16,9 @@
 
 .gridElement {
     flex: 1;
+    border: 1px solid rgb(0, 0, 0);
 }
 
-#one {
-    background-color: green;
-}
-#two {
-    background-color: red;
-}
-#three {
-    background-color: blue;
-}
-#four {
-    background-color: orange;
+.colored {
+    background-color: black;
 }

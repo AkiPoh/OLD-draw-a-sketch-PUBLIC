@@ -11,20 +11,11 @@
     <div id="top">
         <h1>Etch-a-Sketch</h1>
         <div id="adjustSettings">
-            <label for="">Grid size (enter a number between 4 and 100):</label>
-            <input type="text" id="gridSize" name="gridSize">
-            <button type="button">Enter</button>
+            <label for="">Grid size (enter a number between 4 and 32):</label>
+            <input type="number" id="gridSize" name="gridSize" min="4" max="32">
+            <button type="button" id="enterButton">Enter</button>
         </div>
     </div>
-    <div id="gridContainer">
-        <div class="gridColumn">
-            <div class="gridElement" id="one"></div>
-            <div class="gridElement" id="two"></div>
-        </div>
-        <div class="gridColumn">
-            <div class="gridElement" id="three"></div>
-            <div class="gridElement" id="four"></div>
-        </div>
-    </div>
+    <div id="gridContainer"></div>
 </body>
 </html>
