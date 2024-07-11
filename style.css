@@ -4,6 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    box-sizing: border-box;
 }
 
 #top {
@@ -17,6 +18,10 @@ h1 {
 
 #adjustSettings {
     margin-bottom: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 #gridContainer {
@@ -37,7 +42,6 @@ h1 {
     flex-direction: column;
 }
 
-
 .gridRow {
     flex: 1;
     display: flex;
@@ -51,4 +55,36 @@ h1 {
 
 .colored {
     background-color: black;
+}
+
+@media (max-width: 800px) {
+    #top {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #adjustSettings {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #adjustSettings, #gridSize, #enterButton {
+        font-size: 20px;
+    }
+
+    #gridSize {
+        width: 50px;
+    }
+
+    #gridContainer {
+        padding: 10px;
+    }
+
+    .grid {
+        max-width: calc(100vmin - 20px);
+        max-height: calc(100vmin - 20px);
+    }
 }
